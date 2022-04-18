@@ -5,14 +5,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css"/>
+        <script src="https://kit.fontawesome.com/a78bb19602.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            Etch-a-Sketch
-        </header>
-        <button id="btn">Reset Grid</button>
+        <h1>Etch-a-Sketch</h1>
+        <div class="buttons">
+            <button id="clear" class="clear">Clear</button>
+            <div class="slideValue">
+                <input type="range" min="2" max="50" value="16" id="slider">
+                <p class="value">16</p>
+            </div>
+        </div>  
         <footer>
-            Copyright © Raymond Chen
+            <p>Built by </p>
+            <a href="https://github.com/Sunjcar" target="github">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </footer>
         <script type="text/javascript" src="etch.js"></script>
     </body>
