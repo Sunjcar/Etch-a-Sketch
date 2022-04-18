@@ -2,7 +2,9 @@ const container = document.createElement('container')
 container.className='grid'
 container.id = 'box'
 document.body.appendChild(container);
-const clearBtn = document.getElementById('clear')
+const clearBtn = document.getElementById('clear');
+const blackBtn = document.getElementById('black');
+const rainbowBtn = document.getElementById('rainbow');
 
 //Creates a 16 * 16 grid
 function createGrid(){
@@ -55,13 +57,13 @@ function defaultColor(){
     let letters = "0"
     let color = "#"
     for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random())];
     }
     return color;
 }
 
-function colorBlack(item){
-    item.style.background = defaultColor()
+function colorBlack(style){
+    style.style.background = defaultColor()
 }
 
 clearBtn.addEventListener('click', () => {
@@ -71,4 +73,14 @@ clearBtn.addEventListener('click', () => {
     })
 })
 
- 
+blackBtn.addEventListener('click',() => {
+    let grid = document.querySelectorAll('.gridItems');
+    grid.forEach(style => style.addEventListener('mouseover', (e) => {
+        colorBlack(style);}));
+})
+
+rainbowBtn.addEventListener('click',() => {
+    let grid = document.querySelectorAll('.gridItems');
+    grid.forEach(item => item.addEventListener('mouseover', (e) => {
+        changeColor(item);}));
+})
